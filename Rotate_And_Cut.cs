@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Kattis_Rotate_And_Cut
 {
@@ -20,7 +20,11 @@ namespace Kattis_Rotate_And_Cut
                     {
                         break;
                     }
-                    message = message.Remove(0, (message.Length / 4));
+
+                    if (j % 2 == 0)
+                        message = message.Remove(0, message.Length / 4);
+                    else
+                        message = message.Remove(message.Length - message.Length / 4, message.Length / 4);
                 }
 
                 Console.WriteLine(message);
